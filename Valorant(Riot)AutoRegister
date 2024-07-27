@@ -1,0 +1,176 @@
+import random
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+
+username = 'ec3pqziw'
+password = 'pBaiF1ju'
+proxy_server_url3 = "5.188.194.195:63508"# ОСНОВА 30 ДНЕЙ
+proxy_server_url4 = "5.188.205.181:64002"# ОСНОВА 30 ДНЕЙ
+q3t8dev = '░██████╗░██████╗░████████╗░█████╗░██████╗░███████╗██╗░░░██╗\n██╔═══██╗╚════██╗╚══██╔══╝██╔══██╗██╔══██╗██╔════╝██║░░░██║\n██║██╗██║░█████╔╝░░░██║░░░╚█████╔╝██║░░██║█████╗░░╚██╗░██╔╝\n╚██████╔╝░╚═══██╗░░░██║░░░██╔══██╗██║░░██║██╔══╝░░░╚████╔╝░\n░╚═██╔═╝░██████╔╝░░░██║░░░╚█████╔╝██████╔╝███████╗░░╚██╔╝░░\n░░░╚═╝░░░╚═════╝░░░░╚═╝░░░░╚════╝░╚═════╝░╚══════╝░░░╚═╝░░░'
+def startCreating(accsnum):
+    try:
+        mail = f'vq3t8ZHZggpLOHl{random.choice(numerals)}4f{random.choice(letters)}c{random.choice(numerals)}{random.choice(numerals)}d{random.choice(letters)}1@gmail.com'
+        password = ''
+        mailinput = driver.find_element(By.XPATH,
+                                        '/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[2]/div[1]/div[1]/input')
+        mailinput.click()
+        time.sleep(0.2)
+        for s in range(4):
+            password = password + random.choice(letters)
+            password = password + random.choice(numerals)
+        for letter in mail:
+            mailinput.send_keys(letter)
+        time.sleep(0.2)
+
+        buttoncontinue = driver.find_element(By.XPATH, '/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[3]/button')
+        buttoncontinue.click()
+        time.sleep(0.2)
+
+        bday = driver.find_element(By.XPATH, '/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[2]/div/div[1]/input')
+
+        day = random.randint(11, 12)
+        month = random.randint(11, 12)
+        year = random.randint(1997, 2005)
+        bday.send_keys(day, month, year)
+        buttoncontinue.click()
+
+        usernamebox = driver.find_element(By.XPATH,'/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[2]/div/div[1]/input')
+        f = mail.split('@')[0]
+        user = f
+        for letter in f:
+            usernamebox.send_keys(letter)
+        time.sleep(0.2)
+
+        buttoncontinue.click()
+
+        time.sleep(0.2)
+
+        passbox = driver.find_element(By.XPATH,'/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[2]/div/div[1]/div/input')
+        repeatpass = driver.find_element(By.XPATH,'/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[2]/div/div[3]/div/input')
+
+        passbox.click()
+        for che in password:
+            passbox.send_keys(che)
+
+        repeatpass.click()
+        for che in password:
+            repeatpass.send_keys(che)
+
+        time.sleep(0.1)
+        buttoncontinue.click()
+        time.sleep(5)
+
+        toscheck = driver.find_element(By.XPATH, '//*[@id="tos-checkbox"]')
+        toscheck.click()
+
+        finishbutton = driver.find_element(By.XPATH, '/html/body/div[2]/div/main/div[3]/div/div[2]/div/div[3]/button')
+        finishbutton.click()
+
+        checkin = input('🅠➌🅣➑ Аккаунт создан? Записывать данные? (Любое/Нет)')
+        if checkin == 'Нет':
+            print('🅠➌🅣➑ Открываем новую сессию. Данные не записаны.')
+        else:
+            valorantregs.write(f"{user}:{password}\n")
+            print(f'🅠➌🅣➑ Записали в файл valorantregs данные от аккаунта {accsnum}: {user}:{password}')
+            print('🅠➌🅣➑ Открываем новую сессию. Данные записаны.')
+        time.sleep(15)
+    except NoSuchElementException:
+        time.sleep(5)
+        startCreating()
+
+if __name__ == '__main__':
+    print(q3t8dev)
+    options = webdriver.ChromeOptions()
+    proxy_server_url = random.randint(3, 4)
+    options.add_argument("--window-size=1280,1080")
+
+    def __init__():
+        country = input('🅠➌🅣➑ Введите страну(Турция, Россия, TUR, RU): ')
+        if country.lower() == 'турция' or country.lower() == 'tur':
+            if proxy_server_url == 2:
+                options.add_argument(f'--proxy-server=')
+            elif proxy_server_url == 3:
+                options.add_argument(f'--proxy-server={proxy_server_url3}')
+            elif proxy_server_url == 4:
+                options.add_argument(f'--proxy-server={proxy_server_url4}')
+            if country.lower() != 'турция' or country.lower() != 'tur':
+                if proxy_server_url == 2:
+                    input(
+                        f"🅠➌🅣➑ После аутентификации нажмите Enter. После нажатия начнётся создание аккаунта(-ов) с прокси под номером {proxy_server_url}: '{proxy_server_url2}' ")
+                    print('🅠➌🅣➑ Прокси номер', proxy_server_url)
+
+                    print('🅠➌🅣➑ Имя пользователя', username)
+
+                    print('🅠➌🅣➑ Пароль', password)
+                elif proxy_server_url == 3:
+                    input(
+                        f"🅠➌🅣➑ После аутентификации нажмите Enter. После нажатия начнётся создание аккаунта(-ов) с прокси под номером {proxy_server_url}: '{proxy_server_url3}' ")
+                    print('🅠➌🅣➑ Прокси номер', proxy_server_url)
+
+                    print('🅠➌🅣➑ Имя пользователя', username)
+
+                    print('🅠➌🅣➑ Пароль', password)
+                elif proxy_server_url == 4:
+                    input(
+                        f"После аутентификации нажмите Enter. После нажатия начнётся создание аккаунта(-ов) с прокси под номером {proxy_server_url}: '{proxy_server_url4}' ")
+                    print('🅠➌🅣➑ Прокси номер', proxy_server_url)
+
+                    print('🅠➌🅣➑ Имя пользователя', username)
+
+                    print('🅠➌🅣➑ Пароль', password)
+        elif country.lower() == 'россия' or country.lower() == 'ru':
+            print(f'🅠➌🅣➑ Создание аккаунта(-ов) с прокси Хоста.')
+            pass
+
+        else:
+            print('🅠➌🅣➑ Введена неверная страна.')
+            __init__()
+
+    __init__()
+
+    options.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(options=options)
+
+    valorantregs = open('valorantregs', 'a+')
+
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    numerals = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+
+    driver.get('about:blank')
+    time.sleep(1)
+    driver.get('https://google.com/')
+    time.sleep(1)
+    print('🅠➌🅣➑ Аутентифицируйтесь в прокси если выбрали страну отличную от России. После этого введите количество аккаунтов ниже')
+
+    accsnum = int(input('🅠➌🅣➑ Сколько аккаунтов? '))
+
+    driver.get('https://riotgames.com/')
+
+    for some in range(accsnum):
+        print('🅠➌🅣➑ Открытие нового клиента...')
+        time.sleep(1)
+
+        print(f'🅠➌🅣➑ Идет создание аккаунта номер {some+1}.. Пожалуйста, не закрывайте браузер.')
+        driver.get('https://riotgames.com/')
+        time.sleep(1)
+
+        buttonenter = driver.find_element(By.XPATH, '/html/body/div[4]/div/div/div/div[3]/div[4]/div/a')
+
+        buttonenter.click()
+        time.sleep(1)
+
+        buttoncreate = driver.find_element(By.XPATH, '/html/body/div[2]/div/main/div/form/div/div/div[3]/span[2]/a')
+        buttoncreate.click()
+        time.sleep(1)
+
+        try:
+            startCreating(some+1)
+        except NoSuchElementException:
+            time.sleep(4)
+            startCreating(some+1)
+
+print('🅠➌🅣➑ Создание окончено! 🅠➌🅣➑')
