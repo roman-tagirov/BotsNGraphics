@@ -4,7 +4,7 @@ import random
 
 from aiogram import Bot, Dispatcher, types
 
-API_TOKEN = '6955775294:AAF8aM-8TZ7pr4MDVfHklMsaitEsx0FE3EA'
+API_TOKEN = 'SomeToken'
 
 sents = [
     "Я не знаю, подумай сам.",
