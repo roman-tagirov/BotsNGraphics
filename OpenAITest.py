@@ -1,7 +1,7 @@
 from openai import OpenAI
 from time import *
 
-client = OpenAI(api_key="sk-python-bot-kT0YKYdzJDRzdi69t7BWT3BlbkFJLP5JUa2l6Lv4Ioh6wAJR")
+client = OpenAI(api_key="your key here")
 
 print("Вы используете ChatGPT 3.5-turbo. Сделайте свой запрос.")
 
